@@ -3,6 +3,7 @@ export enum WidgetTypes {
   joke = "joke",
   leaderboard = "leaderboard",
   celebrity = "celebrity",
+  textToSpeechIbm = "textToSpeechIBM",
 }
 
 export const ItemTypes = {
