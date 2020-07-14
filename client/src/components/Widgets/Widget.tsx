@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { CelebrityWidget } from "./CelebrityWidget";
 import { JokeWidget } from "./JokeWidget";
 import LeaderboardWidget from "./LeaderboardWidget/LeaderboardWidget";
+import Tts from "./TextToSpeechWidget/tts";
 import { useDrag } from "react-dnd";
 
 export interface IWidgetProps {
@@ -49,6 +50,8 @@ const renderWidget = (type: WidgetTypes) => {
       return <LeaderboardWidget />;
     case WidgetTypes.celebrity:
       return <CelebrityWidget />;
+    case WidgetTypes.texttospeech:
+      return <Tts />;
     // add widget case here for new widget types
     default:
       return null;

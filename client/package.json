@@ -17,7 +17,9 @@
     "adventure-component-library": "0.0.24",
     "axios": "^0.19.2",
     "dnd-multi-backend": "^6.0.0",
+    "fs": "0.0.1-security",
     "immutability-helper": "^3.0.2",
+    "microsoft-cognitiveservices-speech-sdk": "^1.12.1",
     "react": "^16.13.1",
     "react-dnd": "^10.0.2",
     "react-dnd-html5-backend": "^11.1.3",
@@ -26,8 +28,11 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "readline-sync": "^1.4.10",
+    "request-promise": "^4.2.5",
     "typescript": "~3.7.2",
-    "uuid": "^8.1.0"
+    "uuid": "^8.1.0",
+    "xmlbuilder": "^15.1.1"
   },
   "scripts": {
     "start": "REACT_APP_VERSION=$npm_package_version react-scripts start",
