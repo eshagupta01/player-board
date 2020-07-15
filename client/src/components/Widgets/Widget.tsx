@@ -4,6 +4,7 @@ import { ItemTypes, WidgetTypes } from "../../types";
 import React, { useEffect, useState } from "react";
 
 import { CelebrityWidget } from "./CelebrityWidget";
+import { TwitchWidget } from "./TwitchWidget";
 import { JokeWidget } from "./JokeWidget";
 import LeaderboardWidget from "./LeaderboardWidget/LeaderboardWidget";
 import { useDrag } from "react-dnd";
@@ -49,6 +50,8 @@ const renderWidget = (type: WidgetTypes) => {
       return <LeaderboardWidget />;
     case WidgetTypes.celebrity:
       return <CelebrityWidget />;
+    case WidgetTypes.twitch:
+      return <TwitchWidget />;
     // add widget case here for new widget types
     default:
       return null;
