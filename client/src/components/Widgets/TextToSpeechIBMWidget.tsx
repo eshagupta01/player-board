@@ -4,6 +4,7 @@ import { TRACK_LENGTH_MODIFIDER, convertAudioBufferToBlob } from "./util";
 
 var Sound = require("react-sound").default;
 var createBuffer = require("audio-buffer-from");
+const play = require("audio-play");
 
 const TextToSpeechV1 = require("ibm-watson/text-to-speech/v1");
 const { IamAuthenticator } = require("ibm-watson/auth");
@@ -41,6 +42,15 @@ export const TextToSpeechIBMWidget = () => {
   const [audio, setAudio] = useState(new Audio());
   const [isPlayingSong, setPlayingSong] = useState(false);
 
+  function toArrayBuffer(buf: Buffer) {
+    var ab = new ArrayBuffer(buf.length);
+    var view = new Uint8Array(ab);
+    for (var i = 0; i < buf.length; ++i) {
+      view[i] = buf[i];
+    }
+    return ab;
+  }
+
   const getTextToSpeech = async () => {
     textToSpeech
       .synthesize(synthesizeParams)
@@ -49,13 +59,22 @@ export const TextToSpeechIBMWidget = () => {
         return response.result;
       })
       .then((buffer: any) => {
-        console.log(buffer);
-        const blob = convertAudioBufferToBlob(buffer);
-        const newAudioUrl = URL.createObjectURL(blob);
-        const newAudio = new Audio(newAudioUrl);
-        setAudio(newAudio);
-        newAudio.play();
-        setPlayingSong(true);
+        //play audio buffer with possible options
+        const arrBuffer = toArrayBuffer(buffer);
+        var audioCtx = new window.AudioContext();
+        var source = audioCtx.createBufferSource();
+        audioCtx.decodeAudioData(
+          arrBuffer,
+          function (buffer) {
+            source.buffer = buffer;
+            source.connect(audioCtx.destination);
+            source.loop = true;
+            source.start(0);
+          },
+          function (e) {
+            console.log("Error with decoding audio data" + e);
+          }
+        );
       })
       .catch((err: any) => {
         console.log("error:", err);
