@@ -78,6 +78,14 @@
   height: 250px;
 }
 
+.twitch-container {
+  flex-direction: row;
+  width: 600px;
+  height: 600px;
+  overflow: auto;
+  resize: both;
+}
+
 .leaderboard-table {
   height: 250px;
   width: "100%";
