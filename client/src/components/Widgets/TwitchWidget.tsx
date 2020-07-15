@@ -1,5 +1,12 @@
 import React from "react";
 
-export const TwitchWidget = () => {
-  return <div>Hello World</div>;
-};
+export class TwitchWidget extends React.Component {
+  constructor(props: Readonly<{}>) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return <div>Hello World</div>;
+  }
+}
