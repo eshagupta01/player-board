@@ -6,7 +6,7 @@ export enum WidgetTypes {
   balances = "balances",
   bear_faucet = "bear_faucet",
   bear_transfer = "bear_transfer",
-  audio_player = "audio_player",
+  //   audio_player = "audio_player",
 }
 
 export const ItemTypes = {
