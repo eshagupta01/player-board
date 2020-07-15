@@ -4,7 +4,7 @@ import { ItemTypes, WidgetTypes } from "../../types";
 import React, { useEffect, useState } from "react";
 
 import { CelebrityWidget } from "./CelebrityWidget";
-import { TwitchWidget } from "./TwitchWidget";
+import { TwitchWidget } from "./TwitchWidget/TwitchWidget";
 import { JokeWidget } from "./JokeWidget";
 import LeaderboardWidget from "./LeaderboardWidget/LeaderboardWidget";
 import { useDrag } from "react-dnd";
