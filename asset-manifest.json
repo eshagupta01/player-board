@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "https://yeestudio.net/static/css/main.5cbf2cf9.chunk.css",
+    "main.js": "https://yeestudio.net/static/js/main.39087cf5.chunk.js",
+    "main.js.map": "https://yeestudio.net/static/js/main.39087cf5.chunk.js.map",
+    "runtime-main.js": "https://yeestudio.net/static/js/runtime-main.f636b0d3.js",
+    "runtime-main.js.map": "https://yeestudio.net/static/js/runtime-main.f636b0d3.js.map",
+    "static/css/2.8c1f6bf6.chunk.css": "https://yeestudio.net/static/css/2.8c1f6bf6.chunk.css",
+    "static/js/2.55c19e2e.chunk.js": "https://yeestudio.net/static/js/2.55c19e2e.chunk.js",
+    "static/js/2.55c19e2e.chunk.js.map": "https://yeestudio.net/static/js/2.55c19e2e.chunk.js.map",
+    "index.html": "https://yeestudio.net/index.html",
+    "precache-manifest.84403e37d2844747fc89b186e96df0f0.js": "https://yeestudio.net/precache-manifest.84403e37d2844747fc89b186e96df0f0.js",
+    "service-worker.js": "https://yeestudio.net/service-worker.js",
+    "static/css/2.8c1f6bf6.chunk.css.map": "https://yeestudio.net/static/css/2.8c1f6bf6.chunk.css.map",
+    "static/css/main.5cbf2cf9.chunk.css.map": "https://yeestudio.net/static/css/main.5cbf2cf9.chunk.css.map",
+    "static/js/2.55c19e2e.chunk.js.LICENSE.txt": "https://yeestudio.net/static/js/2.55c19e2e.chunk.js.LICENSE.txt",
+    "static/media/Kanye.png": "https://yeestudio.net/static/media/Kanye.ce4d6243.png",
+    "static/media/Lebron.png": "https://yeestudio.net/static/media/Lebron.00f1fde3.png",
+    "static/media/Polka-Dots.svg": "https://yeestudio.net/static/media/Polka-Dots.72456503.svg",
+    "static/media/Rock.png": "https://yeestudio.net/static/media/Rock.625afa09.png",
+    "static/media/bear.png": "https://yeestudio.net/static/media/bear.e2b4363f.png",
+    "static/media/clock.png": "https://yeestudio.net/static/media/clock.116ab4b1.png",
+    "static/media/connect.png": "https://yeestudio.net/static/media/connect.79c70a85.png",
+    "static/media/joao.jpeg": "https://yeestudio.net/static/media/joao.7037e9df.jpeg",
+    "static/media/leo.png": "https://yeestudio.net/static/media/leo.94788b8c.png",
+    "static/media/metamask_fox.png": "https://yeestudio.net/static/media/metamask_fox.cde19f66.png",
+    "static/media/mike.png": "https://yeestudio.net/static/media/mike.ddc5f06c.png",
+    "static/media/ship.gif": "https://yeestudio.net/static/media/ship.0b68c538.gif",
+    "static/media/waves.gif": "https://yeestudio.net/static/media/waves.205809bc.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f636b0d3.js",
+    "static/css/2.8c1f6bf6.chunk.css",
+    "static/js/2.55c19e2e.chunk.js",
+    "static/css/main.5cbf2cf9.chunk.css",
+    "static/js/main.39087cf5.chunk.js"
+  ]
+}
