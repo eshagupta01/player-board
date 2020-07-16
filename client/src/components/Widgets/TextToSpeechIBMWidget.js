@@ -1,10 +1,5 @@
 import "../css/Widget.css";
 import React, { useEffect, useState } from "react";
-import { TRACK_LENGTH_MODIFIDER, convertAudioBufferToBlob } from "./util";
-
-var Sound = require("react-sound").default;
-var createBuffer = require("audio-buffer-from");
-const play = require("audio-play");
 
 const TextToSpeechV1 = require("ibm-watson/text-to-speech/v1");
 const { IamAuthenticator } = require("ibm-watson/auth");
@@ -25,24 +20,8 @@ const synthesizeParams = {
   voice: "en-US_AllisonV3Voice",
 };
 
-var context: AudioContext;
-window.addEventListener("load", init, false);
-function init() {
-  console.log("Initialize");
-  try {
-    // Fix up for prefixing
-    window.AudioContext = window.AudioContext;
-    context = new AudioContext();
-  } catch (e) {
-    alert("Web Audio API is not supported in this browser");
-  }
-}
-
 export const TextToSpeechIBMWidget = () => {
-  const [audio, setAudio] = useState(new Audio());
-  const [isPlayingSong, setPlayingSong] = useState(false);
-
-  function toArrayBuffer(buf: Buffer) {
+  function toArrayBuffer(buf) {
     var ab = new ArrayBuffer(buf.length);
     var view = new Uint8Array(ab);
     for (var i = 0; i < buf.length; ++i) {
@@ -54,29 +33,31 @@ export const TextToSpeechIBMWidget = () => {
   const getTextToSpeech = async () => {
     textToSpeech
       .synthesize(synthesizeParams)
-      .then((response: { result: any }) => {
+      .then((response) => {
         // obtain the audio stream
         return response.result;
       })
-      .then((buffer: any) => {
-        //play audio buffer with possible options
+      .then((buffer) => {
         const arrBuffer = toArrayBuffer(buffer);
-        var audioCtx = new window.AudioContext();
-        var source = audioCtx.createBufferSource();
-        audioCtx.decodeAudioData(
-          arrBuffer,
-          function (buffer) {
-            source.buffer = buffer;
-            source.connect(audioCtx.destination);
-            source.loop = true;
-            source.start(0);
-          },
-          function (e) {
-            console.log("Error with decoding audio data" + e);
-          }
-        );
+        const getAudioContext = () => {
+          AudioContext = window.AudioContext || window.webkitAudioContext;
+          const audioContent = new AudioContext();
+          return audioContent;
+        };
+        // create audio context
+        const audioContext = getAudioContext();
+        // create audioBuffer (decode audio file)
+        const audioBuffer = audioContext.decodeAudioData(arrBuffer);
+
+        // create audio source
+        const source = audioContext.createBufferSource();
+        source.buffer = audioBuffer;
+        source.connect(audioContext.destination);
+
+        // play audio
+        source.start();
       })
-      .catch((err: any) => {
+      .catch((err) => {
         console.log("error:", err);
       });
   };
