@@ -80,7 +80,7 @@
 
 .twitch-container {
   flex-direction: row;
-  width: 600px;
+  width: 1000px;
   height: 600px;
   overflow: auto;
   resize: both;

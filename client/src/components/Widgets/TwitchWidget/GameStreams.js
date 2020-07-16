@@ -53,6 +53,7 @@ function GameStreams({ match, location }) {
                       state: {
                         gameID: match.params.id,
                         channelName: stream.channel.display_name,
+                        viewers: stream.viewers,
                       },
                     }}
                   >
