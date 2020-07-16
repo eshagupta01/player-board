@@ -20,7 +20,7 @@ function Games() {
       <h1>Most Popular Games</h1>
       <div className="row">
         {games.map((game) => (
-          <div className="col-4">
+          <div className="col-lg-4 col-md-6 col-sm-12 mt-5">
             <div className="card">
               <img className="card-img-top" src={game.game.box.medium} />
               <div className="card-body">
