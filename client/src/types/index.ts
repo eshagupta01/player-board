@@ -4,6 +4,10 @@ export enum WidgetTypes {
   leaderboard = "leaderboard",
   celebrity = "celebrity",
   twitch = "twitch",
+  balances = "balances",
+  bear_faucet = "bear_faucet",
+  bear_transfer = "bear_transfer",
+  //   audio_player = "audio_player",
 }
 
 export const ItemTypes = {
