@@ -4,23 +4,16 @@ import api from "./Api";
 function Games() {
   const url = "https://api.twitch.tv/kraken/games/top";
   const [games, setGames] = useState([]);
-  const [executed, setExecuted] = useState(false);
 
   // make sure the function only run once
   useEffect(() => {
-    const fetchData = (function () {
-      return async function () {
-        if (!executed) {
-          setExecuted(true);
-          const result = await api.get(url);
-          console.log(result.data.top[0]);
-          let dataArray = result.data.top;
-          setGames(result.data.top);
-        }
-      };
-    })();
+    const fetchData = async () => {
+      const result = await api.get(url);
+      console.log(result.data.top[0]);
+      setGames(result.data.top);
+    };
     fetchData();
-  });
+  }, []);
 
   return (
     <div>
