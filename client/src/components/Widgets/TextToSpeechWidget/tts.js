@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { microsoft } from "./TTSTools";
+import { mozilla } from "./TTSTools";
 import WaveForm from "../../../assets/waveform.png";
 import { VolumeUp, CloudDownload, Share } from "@material-ui/icons";
 
@@ -7,7 +8,7 @@ function TextToSpeech() {
   const [text, setText] = useState("");
   const [api, setApi] = useState(0);
 
-  const api_list = [microsoft]; // Add your imported function to the list
+  const api_list = [microsoft, mozilla]; // Add your imported function to the list
 
   const handleClick = () => {
     api_list[api](text);
@@ -35,6 +36,7 @@ function TextToSpeech() {
           <option>Select API</option>
           {/* Add an option to the dropdown with the value incremented including your technology */}
           <option value={0}>microsoft</option>
+          <option value={1}>mozilla</option>
         </select>
       </div>
 

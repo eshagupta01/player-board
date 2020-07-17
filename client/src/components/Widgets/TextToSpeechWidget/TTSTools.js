@@ -21,3 +21,14 @@ export function microsoft(text) {
     }
   );
 }
+
+export function mozilla(text) {
+  var synth = window.speechSynthesis;
+  var utterThis = new SpeechSynthesisUtterance(text);
+  utterThis.onerror = function (event) {
+    console.log(
+      "An error has occurred with the mozilla speech synthesis: " + event.error
+    );
+  };
+  synth.speak(utterThis);
+}
